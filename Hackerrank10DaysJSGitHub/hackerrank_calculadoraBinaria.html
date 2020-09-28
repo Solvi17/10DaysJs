@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BinaryCalculator</title>
+</head>
+<style>
+	body{
+		width: 33%;
+	}
+	#res{
+		background-color: lightgray;
+		border:solid;
+		height: 48px;
+		font-size: 20px;
+	}
+	#btn0,#btn1{
+		background-color: lightgreen;
+		color:brown;
+	}
+	#btnClr, #btnEql{
+		background-color: darkgreen;
+		color: white;
+	}
+	#btnSum, #btnSub, #btnMul, #btnDiv{
+		background-color: black;
+		color :red;
+	}
+	button{
+		width: 25%;
+		height: 36px;
+		font-size: 18px;
+		margin:0px;
+		float: left;
+	}
+
+</style>
+<body>
+	
+</body>
+<script>
+	var divid = document.createElement('div')
+	divid.id = "btns"
+	document.body.appendChild(divid)
+
+	var div = document.getElementById('btns')
+
+	function Construir(nombre,id,valorhtml) {
+		var botonfun = document.createElement(nombre)
+		botonfun.id =id
+		botonfun.innerHTML = valorhtml
+		div.appendChild(botonfun)
+	}
+	Construir('div','res','')
+	Construir('button','btn0','0')
+	Construir('button','btn1','1')
+	Construir('button','btnClr','C')
+	Construir('button','btnEql','=')
+	Construir('button','btnSum','+')
+	Construir('button','btnSub','-')
+	Construir('button','btnMul','*')
+	Construir('button','btnDiv','/')
+
+	var valor1;
+	document.getElementById('btn0').addEventListener('click',function 
+		() {
+		res.innerHTML += "0"
+	})
+
+	document.getElementById('btn1').addEventListener('click',function 
+		() {
+		res.innerHTML += "1"
+	})
+	document.getElementById('btnClr').addEventListener('click',function 
+		() {
+		res.innerHTML =""
+	})
+	document.getElementById('btnSum').addEventListener('click',function 
+		() {
+		res.innerHTML += "+"
+	})
+	document.getElementById('btnSub').addEventListener('click',function 
+		() {
+		res.innerHTML += "-"
+	})
+	document.getElementById('btnMul').addEventListener('click',function 
+		() {
+		res.innerHTML += "*"
+	})
+	document.getElementById('btnDiv').addEventListener('click',function 
+		() {
+		res.innerHTML += "/"
+	})
+
+	document.getElementById('btnEql').addEventListener('click',function 
+		() {
+		var valor = document.getElementById('res').innerHTML;
+		let expresion = /\W+/
+
+		var operador = valor.match(expresion)
+		var lista = valor.split(expresion)
+		let x = parseInt(lista[0],2)
+		let y = parseInt(lista[1],2)
+		let result =0
+		if (operador=="+") {
+			result = x+y
+			res.innerHTML=result.toString(2)
+		}
+		if (operador=="-") {
+			result = x-y
+			res.innerHTML=result.toString(2)
+		}
+		if (operador=="/") {
+			result = Math.floor(x/y)
+			res.innerHTML=result.toString(2)
+		}
+		if (operador=="*") {
+			result = x*y
+			res.innerHTML=result.toString(2)
+		}
+
+	})
+
+
+</script>
+</html>

@@ -1,0 +1,24 @@
+<script type="text/javascript">
+
+    var vocales = ["a","e","i","o","u"]
+    var sete = new Set(vocales)
+    console.log(sete)
+    var palab ="Holastesaaaai"
+    var palabra= [...palab]
+    for (var i = 0 ; i <= palabra.length-1; i++) {
+    	//console.log(palabra[i])
+    	var exists = sete.has(palabra[i])
+    	if(exists==true){
+    		console.log(palabra[i])
+    	}
+    }
+    for (var i = 0 ; i <= palabra.length-1; i++) {
+    	//console.log(palabra[i])
+    	var exists = sete.has(palabra[i])
+    	if(exists==false){
+    		console.log(palabra[i])
+    	}
+    }
+
+    
+</script>

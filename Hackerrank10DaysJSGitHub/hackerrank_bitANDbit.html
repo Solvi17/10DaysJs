@@ -1,0 +1,45 @@
+<script>
+
+
+	function getMaxLessThanK(n,valor2) {
+		var valor1 = n
+		var valor0 = 0
+		for(var i=1;i<=valor1;i++){
+			for(var j=i+1;j<=valor1;j++){
+					var a = i
+					var b = j
+					var comparaty = a & b
+					if(comparaty<valor2 && comparaty>valor0){
+							valor0 = comparaty
+					}
+			}
+		}
+		
+		return valor0
+
+	}
+	function convertion(number,base) {
+		let lista = []	
+		while(number>=base){
+			let residuo = number%base
+			number = Math.floor(number/base)
+			lista.push(residuo)
+		}
+		lista.push(number)
+		let resultado = lista.reverse().join('')	
+		return resultado
+	}
+
+	function reverseconvertion(number,base){
+		var array = String(number)
+		var suma = 0
+		for(var i=1;i<=array.length;i++){
+			
+			var valor = parseInt(array[i-1])*(Math.pow(base,array.length-i))
+			var suma = suma+ valor 
+		}
+		return suma
+	}
+
+
+</script>

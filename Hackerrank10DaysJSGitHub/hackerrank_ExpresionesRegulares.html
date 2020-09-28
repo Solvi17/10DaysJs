@@ -1,0 +1,56 @@
+<script>
+/*
+	var vocales = ["a","e","i","o","u"]
+    var sete = new Set(vocales)
+    var palab ="aeabcdia ha"
+    var palabra= [...palab]
+    for (var i = 0 ; i <= palabra.length-1; i++) {
+
+    	var exists = sete.has(palabra[i])
+    	var exists2 = sete.has(palabra[0])
+    	//console.log(palabra[0])
+    	if(exists==true && exists2 ==true) {
+    		//console.log(palabra[i])
+    		let primero = palabra.shift() 
+    		let ultimo = palabra.pop()
+    		
+    		if (primero ==ultimo){
+				console.log(true)
+				break
+			}
+			else {
+				console.log(false)
+				break
+			}
+    	}else {
+				console.log(false)
+				break
+			}
+    	
+    }
+
+*/
+	var a ="abcda"
+	var b= Array.from(a)
+	var c = b.reverse()
+	console.log(b)
+    
+	let re = new RegExp(b[0]=c[0])
+	console.log(re,b)
+
+
+	// ^ => coincide con el primer elemento: 
+	// () => almacena el valor coincidente capturado dentro de 
+	// [aeiou] => coincide con cualquiera de los caracteres entre paréntesis 
+	//. => coincide con cualquier carácter: 
+	// + => para 1 o más ocurrencias (esto asegura la longitud de str> 3) 
+	// \ 1 => coincide con la coincidencia almacenada previamente. 
+	    // \ 2 busca el elemento coincidente almacenado hace 2 instancias 
+	    // \ 3 busca el elemento coincidente almacenado hace 3, etc.
+
+	// $ asegura que el elemento coincidente esté al final de la secuencia
+
+    let re  =  /^([aeiou]).+\1$/; 
+    return re; 
+
+</script>

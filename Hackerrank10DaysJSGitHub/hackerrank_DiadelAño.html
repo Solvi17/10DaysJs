@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	let datestring = '11/10/2010'
+	let arreglo =datestring.split('/')
+	let cambiar = arreglo.pop()
+	arreglo.unshift(cambiar)
+	
+	let dayName=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	var fecha = new Date(arreglo)
+	
+	for(var i=0;i<=dayName.length-1;i++){
+		if(i == fecha.getDay()){
+			console.log(dayName[i])
+		}
+	}	
+	
+
+</script>

@@ -1,0 +1,13 @@
+<script>
+	//var set = ['Mr.', 'Mrs.', 'Ms.', 'Dr.', 'Er.']
+	//var palabra = "Mr.ga"
+	function expresiones(palabra) {
+		//var set = ['Mr.', 'Mrs.', 'Ms.', 'Dr.', 'Er.']
+		//var palabra = "Mr.ga"
+		let na = /([Mr|Mrs|Dr|Er])\.([a-zA-Z])+$/;
+
+		console.log(na.test(palabra))
+		console.log(palabra.match(na))
+	}
+	
+</script>

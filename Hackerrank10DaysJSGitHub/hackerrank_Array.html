@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	
+	var x = [2,3,6,6,5,5,4,6,6,6,10]
+
+	var lista =[]
+	x.sort(function(a, b){return a-b})
+	console.log(x)
+	for (var i = x.length - 1; i >= 0; i--) {
+		lista.push(x[i])
+	}
+	console.log(lista)
+	var sete = [...new Set(lista)]
+	console.log(lista,sete)
+	sete.shift()
+	var result = sete[0]
+	console.log(result)
+
+	
+	
+</script>

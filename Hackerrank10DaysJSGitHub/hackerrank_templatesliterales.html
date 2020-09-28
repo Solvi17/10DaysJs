@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+	function sides(literals, ...expressions) {
+    let A = 140
+    let P = 48
+    var s1 =(P + Math.sqrt(P*P-16*A))/4
+    var s2 =(P - Math.sqrt(P*P-16*A))/4
+    var array =[]
+    array.push(s1)
+    array.push(s2)
+    array.sort()
+    return array
+}
+let s1 = 10;
+let s2 = 14;
+    
+[s1, s2] = [s1, s2].sort();
+const [x, y] = sides`The area is: ${s1 * s2}.\nThe perimeter is: ${2 * (s1 + s2)}.`;
+console.log(s1)
+console.log(x)
+console.log((s1 === x) ? s1 : -1);
+console.log((s2 === y) ? s2 : -1);
+</script>
+</html>
